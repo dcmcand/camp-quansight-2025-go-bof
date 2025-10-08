@@ -2,10 +2,14 @@ package even
 
 import (
 	"context"
+	"fmt"
 	"log/slog"
 )
 
 func IsEven(ctx context.Context, number int) (bool, error) {
+	if number < 0 {
+		return false, fmt.Errorf("negative numbers are not supported: %d", number)
+	}
 	// Extract request ID from context for logging
 	var requestID string
 	if id := ctx.Value("requestID"); id != nil {
