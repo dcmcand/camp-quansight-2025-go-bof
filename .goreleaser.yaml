@@ -8,6 +8,7 @@ before:
 builds:
   - env:
       - CGO_ENABLED=0
+    mod_timestamp: "{{ .CommitTimestamp }}"
     goos:
       - linux
       - windows
@@ -58,7 +59,6 @@ dockers:
       - "--label=org.opencontainers.image.version={{.Version}}"
     extra_files:
       - go.mod
-      - go.sum
       - main.go
       - pkg
 
