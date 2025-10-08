@@ -59,6 +59,7 @@ dockers:
       - "--label=org.opencontainers.image.version={{.Version}}"
     extra_files:
       - go.mod
+      - go.sum
       - main.go
       - pkg
 
